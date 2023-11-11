@@ -6,84 +6,69 @@
 #    By: pvilchez <pvilchez@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/20 13:11:53 by pvilchez          #+#    #+#              #
-#    Updated: 2023/05/06 20:41:20 by pvilchez         ###   ########.fr        #
+#    Updated: 2023/11/11 11:42:22 by pvilchez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-FILES = ft_atoi.c\
-		ft_bzero.c\
-		ft_calloc.c\
-		ft_isalnum.c\
-		ft_isalpha.c\
-		ft_isascii.c\
-		ft_isdigit.c\
-		ft_isprint.c\
-		ft_itoa.c\
-		ft_memchr.c\
-		ft_memcmp.c\
-		ft_memcpy.c\
-		ft_memmove.c\
-		ft_memset.c\
-		ft_putchar_fd.c\
-		ft_putendl_fd.c\
-		ft_putnbr_fd.c\
-		ft_putstr_fd.c\
-		ft_split.c\
-		ft_strchr.c\
-		ft_strdup.c\
-		ft_striteri.c\
-		ft_strjoin.c\
-		ft_strlcat.c\
-		ft_strlcpy.c\
-		ft_strlen.c\
-		ft_strmapi.c\
-		ft_strncmp.c\
-		ft_strnstr.c\
-		ft_strrchr.c\
-		ft_strtrim.c\
-		ft_substr.c\
-		ft_tolower.c\
-		ft_toupper.c
+CC = cc
+CFLAGS = -Wall -Wextra -Werror
+LIBFLAGS = ar -rcs
+REMOVE = rm -rf
 
-F_BONUS = ft_lstadd_back.c\
-		ft_lstadd_front.c\
-		ft_lstclear.c\
-		ft_lstdelone.c\
-		ft_lstiter.c\
-		ft_lstlast.c\
-		ft_lstmap.c\
-		ft_lstnew.c\
+OBJ_PATH = obj
+SRC_PATH = src
+INC_PATH = include
+
+LIBFT_PATH = ./
+LIBFT_LIB_PATH = ./libft.a
+
+HEADERS	= -I $(LIBFT_PATH)/include/ -I ./include
+
+SRC_FILES = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
+		ft_isascii.c ft_isdigit.c ft_isprint.c ft_itoa.c ft_memchr.c \
+		ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memset.c ft_putchar_fd.c \
+		ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c ft_split.c ft_strchr.c \
+		ft_strdup.c ft_striteri.c ft_strjoin.c ft_strlcat.c ft_strlcpy.c\
+		ft_strlen.c ft_strmapi.c ft_strncmp.c ft_strnstr.c ft_strrchr.c\
+		ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c
+BONUS_SRC_FILES = ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c \
+		ft_lstdelone.c ft_lstiter.c ft_lstlast.c ft_lstmap.c ft_lstnew.c \
 		ft_lstsize.c
 
+SRC := $(addprefix $(SRC_PATH)/, $(SRC_FILES))
+BONUS_SRC := $(addprefix $(SRC_PATH)/, $(BONUS_SRC_FILES))
+OBJ = $(SRC:$(SRC_PATH)/%.c=$(OBJ_PATH)/%.o)
+OBJ_BONUS = $(BONUS_SRC:$(SRC_PATH)/%.c=$(OBJ_PATH)/%.o)
 
-OBJECTS = $(FILES:.c=.o)
-
-OBJ_BONUS = $(F_BONUS:.c=.o)
-
-FLAGS = -Wall -Wextra -Werror
+ORANGE = \033[1;38;5;208m
+RESET = \033[0m
+U_LINE = \033[4m
+YELLOW = \033[1;38;5;226m
 
 all: $(NAME)
 
-$(NAME): $(OBJECTS)
-	ar rcs $(NAME) $(OBJECTS)
+$(NAME): $(OBJ)
+	@$(LIBFLAGS) $(NAME) $(OBJ) $@
+	@echo "\n$(ORANGE)$(U_LINE)$(NAME): Mandatory Compiled$(RESET) \n"
 
-$(OBJECTS): $(FILES)
-	gcc $(FLAGS) -c $(FILES)
-
-bonus: $(OBJECTS) $(OBJ_BONUS)
-	ar rcs $(NAME) $(OBJECTS) $(OBJ_BONUS)
-
-$(OBJ_BONUS): $(F_BONUS)
-	gcc $(FLAGS) -c $(F_BONUS)
+$(OBJ_PATH)/%.o: $(SRC_PATH)/%.c
+	@mkdir -p $(OBJ_PATH)
+	@$(CC) $(CFLAGS) -o $@ -c $< $(HEADERS)
+	@echo "$(YELLOW)$(NAME) Compiling:$(RESET) $(notdir $<)"
 
 clean:
-	rm -f $(OBJECTS) $(OBJ_BONUS)
+	@$(REMOVE) $(OBJ_PATH)
 
 fclean: clean
-	rm -f $(NAME)
+	@$(REMOVE) $(NAME)
 
 re: fclean all
+
+bonus: $(LIBFT_LIB_PATH) $(OBJ_BONUS)
+	@$(CC) $(OBJ_BONUS) $(LIBFT_LIB_PATH) $(HEADERS) -o $(NAME)
+	@echo ¨last compilation bonus¨ > bonus
+	@echo "\n$(ORANGE)$(U_LINE)$(NAME): Bonus Compiled$(RESET) \n"
 
 .PHONY: all clean fclean re bonus
