@@ -6,12 +6,19 @@
 /*   By: pvilchez <pvilchez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 17:06:04 by pvilchez          #+#    #+#             */
-/*   Updated: 2023/04/22 11:18:26 by pvilchez         ###   ########.fr       */
+/*   Updated: 2023/11/11 20:05:33 by pvilchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
+/**
+ * @brief Copy the contents of a memory area.
+ * @param dest Destination memory area.
+ * @param src Origin memory area.
+ * @param n Number of elements to copy.
+ * @return Destination memory area.
+ */
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	char	*d;
@@ -36,17 +43,3 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-
-/*
-int	main(void)
-{
-	char	str1[] = "Esta es la cadena origen";
-	char	str2[] = "Cadena destino";
-
- 	printf("Antes de memmove: %s\n", str2);
- 	ft_memmove(str2, str1, 5);
- 	printf("Despúes de memmove: %s\n", str2);
-
- 	return (0);
-}
-*/

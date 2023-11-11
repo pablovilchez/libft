@@ -6,12 +6,19 @@
 /*   By: pvilchez <pvilchez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 10:22:47 by pvilchez          #+#    #+#             */
-/*   Updated: 2023/04/25 10:09:01 by pvilchez         ###   ########.fr       */
+/*   Updated: 2023/11/11 21:11:27 by pvilchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Reserves memory and returns a string resulting from removing from the
+ * beginning and end the characters included in another string.
+ * @param s1 String to trim.
+ * @param set String with the characters to trim.
+ * @return Pointer to the new string.
+ */
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*str;

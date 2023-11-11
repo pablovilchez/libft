@@ -6,12 +6,19 @@
 /*   By: pvilchez <pvilchez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 16:58:43 by pvilchez          #+#    #+#             */
-/*   Updated: 2023/04/23 11:43:36 by pvilchez         ###   ########.fr       */
+/*   Updated: 2023/11/11 20:41:54 by pvilchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
+/**
+ * @brief Copy the content of a memory area to another.
+ * @param dest Destination memory area.
+ * @param src Origin memory area.
+ * @param n Number of elements to copy.
+ * @return Pointer to the destination memory area.
+ */
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	unsigned char	*d;

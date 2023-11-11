@@ -6,12 +6,18 @@
 /*   By: pvilchez <pvilchez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 09:47:26 by pvilchez          #+#    #+#             */
-/*   Updated: 2023/04/24 21:26:49 by pvilchez         ###   ########.fr       */
+/*   Updated: 2023/11/11 20:31:36 by pvilchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Reserve memory and create a string from two others.
+ * @param s1 First string.
+ * @param s1 Second string.
+ * @return Pointer to the new string.
+ */
 char	*ft_strjoin(const char *s1, const char *s2)
 {
 	char	*dest;

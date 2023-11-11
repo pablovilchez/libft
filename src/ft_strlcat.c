@@ -6,12 +6,19 @@
 /*   By: pvilchez <pvilchez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 21:37:57 by pvilchez          #+#    #+#             */
-/*   Updated: 2023/04/22 12:00:16 by pvilchez         ###   ########.fr       */
+/*   Updated: 2023/11/11 20:40:05 by pvilchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
+/**
+ * @brief Try to add the content of one string to the end of another.
+ * @param dst Destination string.
+ * @param src Source string.
+ * @param size Maximum number of characters to copy.
+ * @return Size of the resulting string if it were to be copied.
+ */
 size_t	ft_strlcat(char *dst, char *src, size_t size)
 {
 	size_t	i;

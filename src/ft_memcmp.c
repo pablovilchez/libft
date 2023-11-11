@@ -6,12 +6,19 @@
 /*   By: pvilchez <pvilchez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 11:51:10 by pvilchez          #+#    #+#             */
-/*   Updated: 2023/04/23 12:05:26 by pvilchez         ###   ########.fr       */
+/*   Updated: 2023/11/11 20:47:47 by pvilchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
+/**
+ * @brief Compare two memory areas element by element.
+ * @param str1 First memory area to compare.
+ * @param str2 Second memory area to compare.
+ * @param n Maximum number of elements to compare.
+ * @return 0 if equals. Positive if str1 is greater. Negative if less.
+ */
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	unsigned char	*str1;

@@ -6,7 +6,7 @@
 /*   By: pvilchez <pvilchez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 19:18:49 by pvilchez          #+#    #+#             */
-/*   Updated: 2023/04/26 20:33:02 by pvilchez         ###   ########.fr       */
+/*   Updated: 2023/11/11 20:18:40 by pvilchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,11 @@ void	reverse(long num, int fd)
 	ft_putchar_fd(c, fd);
 }
 
+/**
+ * @brief Send an integer to a given file descriptor.
+ * @param s Number to send.
+ * @param fd Destination file descriptor.
+ */
 void	ft_putnbr_fd(int n, int fd)
 {
 	long	num;

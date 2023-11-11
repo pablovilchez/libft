@@ -1,0 +1,23 @@
+# Archivos generados por el sistema operativo
+.DS_Store
+
+# Carpeta de compilación y archivos objeto
+/obj/
+*.o
+
+# Archivos temporales
+*~
+
+# Dependencias de compilación
+*.d
+
+# Carpeta de archivos de configuración de Visual Studio Code
+.vscode/
+
+# Ignora todos los archivos en la carpeta de pruebas
+*
+
+# Pero incluye específicamente el Makefile
+!.gitignore
+!Makefile
+!README.md

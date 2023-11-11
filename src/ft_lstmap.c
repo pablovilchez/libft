@@ -6,12 +6,18 @@
 /*   By: pvilchez <pvilchez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 19:17:08 by pvilchez          #+#    #+#             */
-/*   Updated: 2023/04/27 20:29:45 by pvilchez         ###   ########.fr       */
+/*   Updated: 2023/11/11 19:33:38 by pvilchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Duplicates a list by applying a function to the content of each node.
+ * Delete the created nodes if the process is not completed.
+ * @param lst Pointer to an element of the linked list.
+ * @return Pointer to the head of the created list.
+ */
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*newlst;

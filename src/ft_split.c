@@ -6,7 +6,7 @@
 /*   By: pvilchez <pvilchez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 10:15:42 by pvilchez          #+#    #+#             */
-/*   Updated: 2023/04/26 12:02:18 by pvilchez         ###   ########.fr       */
+/*   Updated: 2023/11/11 20:22:21 by pvilchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,12 @@ void	*free_all(char **matrix, size_t num)
 	return (NULL);
 }
 
+/**
+ * @brief Splits a string based on a separator character.
+ * @param s String to split.
+ * @param c Separator character.
+ * @return Array of strings.
+ */
 char	**ft_split(char const *s, char c)
 {
 	size_t	num;

@@ -6,7 +6,7 @@
 /*   By: pvilchez <pvilchez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 12:38:13 by pvilchez          #+#    #+#             */
-/*   Updated: 2023/04/26 13:54:30 by pvilchez         ###   ########.fr       */
+/*   Updated: 2023/11/11 13:32:07 by pvilchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,26 +38,31 @@ void	comp_num(char *res, long num, size_t s)
 	}
 }
 
-char	*ft_itoa(int n)
+/**
+ * @brief Convert an integer to a string.
+ * @param num String in which you want to search.
+ * @return The integer found. (integer value is 0 if not found)
+ */
+char	*ft_itoa(int num)
 {
 	size_t	s;
-	long	num;
+	long	cast_num;
 	char	*res;
 
-	num = (long)n;
-	if (num < 0)
-		num *= -1;
-	s = num_len(num);
-	if (n < 0)
+	cast_num = (long)num;
+	if (cast_num < 0)
+		cast_num *= -1;
+	s = num_len(cast_num);
+	if (cast_num < 0)
 		s++;
 	res = ft_calloc(s + 1, sizeof(char));
 	if (res == NULL)
 		return (NULL);
-	if (n < 0)
+	if (cast_num < 0)
 		res[0] = '-';
-	if (n == 0)
+	if (cast_num == 0)
 		res[0] = '0';
 	else
-		comp_num(res, num, s - 1);
+		comp_num(res, cast_num, s - 1);
 	return (res);
 }
