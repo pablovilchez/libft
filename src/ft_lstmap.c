@@ -6,11 +6,11 @@
 /*   By: pvilchez <pvilchez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 19:17:08 by pvilchez          #+#    #+#             */
-/*   Updated: 2023/11/11 19:33:38 by pvilchez         ###   ########.fr       */
+/*   Updated: 2023/11/22 20:07:30 by pvilchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/libft.h"
 
 /**
  * @brief Duplicates a list by applying a function to the content of each node.
